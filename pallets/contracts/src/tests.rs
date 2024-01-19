@@ -706,6 +706,7 @@ fn migration_on_idle_hooks_works() {
 	}
 }
 
+
 #[test]
 fn migration_in_progress_works() {
 	let (wasm, code_hash) = compile_module::<Test>("dummy").unwrap();
@@ -5735,4 +5736,14 @@ fn root_cannot_instantiate() {
 			DispatchError::RootNotAllowed
 		);
 	});
+
+
+
+	/// Tests for pocs [TODO]
+	/// case 1 : deploy a contract in instantiate_with_code and show event emit of thhe stake_score values 
+	/// case 2 : run a contract to show the stake_score incement 
+	/// case 2.1 : run a contract twice in a block and show the stake_score inceress only once 
+	/// case 2.3 : delegate calls contract A calles contract B and their stake score increases independently  
+	/// case 3 : Update_delegate funtion tests 
+	/// case 3.1 : Update_delegate funtion fails when other accout other than owner tries to update the delegate 
 }
